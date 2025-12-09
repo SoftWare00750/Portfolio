@@ -1,11 +1,13 @@
 import React from "react";
 import projects from "../data/projects";
 
+
+
 export default function Projects() {
   return (
       <section id="projects" className="section">
             <div className="container">
-                    <h2 className="section-title">Featured Projects</h2>
+                    <h2 id="project-title" className="section-title">Featured Projects</h2>
                             <div className="projects-grid">
                                       {projects.map((p) => (
                                        
@@ -13,12 +15,13 @@ export default function Projects() {
                                             
 
                                        
-                                                                                
+                                                                                 
                                                                                
                                                                                                             <div className="project-card"> 
 
                                                                                                                 <div className="project-media">
-                                                   <img src="/assets/project-1.jpg" alt={p.title} />
+                                                   <img src= {p.image}  alt={p.title}/>
+                                                   
                                                                                 
                                                                                               </div>
                                                                                                <div className="project-box">
@@ -28,7 +31,8 @@ export default function Projects() {
                                                                                                                                                             <div className="tech-list">
                                                                                                                                                                               {p.tech.map(t => <span key={t} className="tech">{t}</span>)}
                                                                                                                                                                                               </div>
-                                                                                                                                                                                                              <a className="link" href={p.link}>View details</a>
+                                                                                                                                                                                               <button className="link-button" onClick={() => window.open(p.link, "_self")} > View Site </button>
+                                                                                                                                                                                                             
                                                                                                                                                                                                                             </div>
                                                                                                                                                                                                                                         </div>
                                                                                                                                                                                                                                         </div>

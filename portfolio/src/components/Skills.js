@@ -1,15 +1,22 @@
 import React from "react";
 
 const skills = [
-  { name: "Windows Server", img: "/images/windows-server.png" },
-  { name: "Linux (Ubuntu, CentOS)", img: "/images/linux.png" },
-  { name: "VMware & Hyper-V", img: "/images/vmware.png" },
-  { name: "AWS & Oracle Cloud", img: "/images/aws.png" },
-  { name: "Networking (VLAN/VPN/Firewalls)", img: "/images/networking.png" },
-  { name: "CI/CD, Docker, Git", img: "/images/devops.png" },
-  { name: "HTML", img: "/images/html.png" },
-  { name: "CSS", img: "/images/css.png" },
-  { name: "Javascript", img: "/images/javascript.png" },
+  { name: "HTML", img: "/assets/html.png" },
+  { name: "CSS", img: "/assets/css.png" },
+  { name: "Tailwind CSS", img: "/assets/tailwind.png" },
+  { name: "Javascript", img: "/assets/javascript.png" },
+  
+  { name: "React", img: "/assets/react.png" },
+  { name: "Angular", img: "/assets/angular.png" },
+  { name: "Vue", img: "/assets/vue1.png" },
+  { name: "Vercel", img: "/assets/vercel.png" },
+  { name: "Networking ", img: "/assets/networking.png" },
+  { name: "CI/CD", img: "/assets/cicd.png" },
+   { name: "Docker", img: "/assets/docker.png" },
+    { name: "Git", img: "/assets/git.png" },
+     { name: "Github", img: "/assets/github.png" },
+     {name: "AWS", img: "/assets/aws.png" },
+     {name: "Oracle Cloud", img: "/assets/oracle.png"}
 ];
 
 export default function Skills() {
