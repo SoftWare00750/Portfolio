@@ -2,7 +2,7 @@
   --bg: #0f1724;
   --card: #0b1220;
   --muted: #94a3b8;
-  --accent: #6ee7b7;
+  --accent: #ffd700;
   --white: #eef2ff;
 }
 
@@ -430,7 +430,7 @@ p, span, h1, h2, h3, h4, h5, h6, li, a, label {
 }
 
 .link-button:hover {
-  background: var(--accent, #6ee7b7);
+  background: var(--accent, #ffd700);
   color: #0f172a;
 }
 
@@ -579,7 +579,7 @@ p, span, h1, h2, h3, h4, h5, h6, li, a, label {
 }
 
 .skill-item:hover .skill-pill {
-  background: var(--accent, #6ee7b7);
+  background: var(--accent, #ffd700);
   color: #0f172a;
 }
 
@@ -682,7 +682,7 @@ p, span, h1, h2, h3, h4, h5, h6, li, a, label {
 
 .chat-box h2 {
   margin-bottom: 10px;
-  color: #6ee7b7;
+  color: #ffd700;
   text-align: center;
 }
 
@@ -695,7 +695,7 @@ p, span, h1, h2, h3, h4, h5, h6, li, a, label {
 .chat-box input {
   width: 100%;
   padding: 14px;
-  color: #6ee7b7;
+  color: #ffd700;
   background-color: rgba(7, 24, 39, 0.2);
   border: 1px solid #0f1724b3;
   border-radius: 6px;
@@ -705,7 +705,7 @@ p, span, h1, h2, h3, h4, h5, h6, li, a, label {
 .chat-box textarea {
   width: 100%;
   height: 50%;
-  color: #6ee7b7;
+  color: #ffd700;
   background-color: rgba(7, 24, 39, 0.2);
   padding: 14px;
   border: 1px solid #0f1724b3;
@@ -716,7 +716,7 @@ p, span, h1, h2, h3, h4, h5, h6, li, a, label {
 
 input::placeholder,
 textarea::placeholder {
-  color: #6ee7b7 !important;
+  color: #ffd700 !important;
   opacity: 1;
 }
 
