@@ -13,12 +13,12 @@ export default function Hero() {
           </h1>
           <span className="hero-sub">
             <p className="hero-sub-right-fixed">
-              Fullstack Developer 
+              Web Developer 
             </p>
             <p className="hero-sub-right2">
               <span>I handle the development, deployment</span>
               <br />
-              <span>and maintenance of your Website and Apps, start to finish.</span>
+              <span>and maintenance of your Website, start to finish.</span>
             </p>
           </span>
           </div>
