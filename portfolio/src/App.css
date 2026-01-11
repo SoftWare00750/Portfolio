@@ -97,6 +97,8 @@ p, span, h1, h2, h3, h4, h5, h6, li, a, label {
   cursor: default;
 }
 
+
+/* navigation links */
 /* ===== NAVBAR ===== */
 .navbar {
   display: flex;
@@ -115,9 +117,42 @@ p, span, h1, h2, h3, h4, h5, h6, li, a, label {
   overflow: hidden;
 }
 
-/* Hide hamburger by default */
+/* Hide hamburger by default on desktop */
 .hamburger {
   display: none;
+  flex-direction: column;
+  gap: 6px;
+  cursor: pointer;
+  z-index: 200;
+  width: 30px;
+  height: 24px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  display: block;
+  transform-origin: center;
+}
+
+/* Hamburger animation to X */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
 }
 
 /* navbar inner container */
@@ -151,7 +186,7 @@ p, span, h1, h2, h3, h4, h5, h6, li, a, label {
   font-size: 30px;
 }
 
-/* navigation links */
+/* navigation links - Desktop */
 .nav {
   margin-left: auto;
   display: flex;
@@ -795,6 +830,7 @@ textarea::placeholder {
 }
 
 /* ===== MOBILE RESPONSIVE ===== */
+
 @media (max-width: 768px) {
   section {
     scroll-margin-top: 80px;
@@ -803,72 +839,92 @@ textarea::placeholder {
   /* Show hamburger on mobile */
   .hamburger {
     display: flex !important;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    z-index: 200;
-    width: 28px;
   }
 
-  .hamburger span {
-    width: 28px;
-    height: 3px;
-    background: var(--accent);
-    border-radius: 2px;
-    transition: all 0.3s ease;
-    display: block;
-  }
-
-  .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(6px, 6px);
-  }
-
-  .hamburger.active span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -7px);
-  }
-
-  /* Mobile Navigation Menu */
+  /* Mobile Navigation Menu - Slide down from navbar */
   .nav {
     position: fixed;
-    top: 70px;
-    left: 0;
-    right: 0;
-    background: rgba(7, 16, 40, 0.98);
-    backdrop-filter: blur(10px);
+    top: 70px; /* Position below navbar */
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%);
+    width: 85%;
+    max-width: 400px;
+    background: rgba(23, 121, 207, 0.95); /* Blue transparent background */
+    backdrop-filter: blur(15px);
     flex-direction: column;
-    padding: 20px;
-    gap: 15px;
-    transform: translateY(-150%);
+    padding: 25px 20px;
+    gap: 0;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55), 
+                opacity 0.3s ease, 
+                visibility 0.3s ease;
     margin-left: 0;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
     z-index: 99;
+    overflow: hidden;
   }
 
   .nav.open {
-    transform: translateY(0);
+    transform: translateX(-50%) translateY(0);
     opacity: 1;
     visibility: visible;
   }
 
   .nav-link {
     font-size: 18px;
-    padding: 12px;
-    text-align: center;
+    padding: 16px 20px;
+    text-align: left;
     width: 100%;
     display: block;
+    color: var(--white);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .nav-link:last-of-type {
+    border-bottom: none;
+  }
+
+  .nav-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+    padding-left: 30px;
+    color: var(--accent);
   }
 
   .contact-button {
-    width: 100%;
+    width: calc(100% - 40px);
     padding: 15px 20px;
     text-align: center;
+    margin: 15px 20px 5px 20px;
+    background-color: var(--accent);
+    color: var(--bg);
+    border: 2px solid var(--accent);
+  }
+
+  .contact-button:hover {
+    background-color: transparent;
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+}
+
+@media (max-width: 600px) {
+  .nav {
+    width: 90%;
+    padding: 20px 15px;
+  }
+
+  .nav-link {
+    font-size: 16px;
+    padding: 14px 15px;
+  }
+
+  .contact-button {
+    width: calc(100% - 30px);
+    margin: 12px 15px 5px 15px;
+    font-size: 16px;
   }
 }
 
