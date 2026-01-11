@@ -198,10 +198,44 @@
 }
 
 /* =========================
-   MOBILE OPTIMIZATIONS - SLIGHTLY SLOWER
+   MOBILE OPTIMIZATIONS - NAVBAR SPECIFIC
    ========================= */
 @media (max-width: 768px) {
-  /* Reduce translation distances on mobile */
+  /* CRITICAL: Override navbar animations for mobile menu */
+  .navbar {
+    transform: translateY(0) !important; /* Force navbar always visible on mobile */
+    transition-duration: 0s !important; /* Remove slide animation on mobile */
+  }
+  
+  .navbar.animate {
+    transform: translateY(0) !important;
+  }
+
+  /* CRITICAL: Disable desktop nav animations on mobile */
+  .nav-desktop {
+    transform: none !important;
+    animation: none !important;
+  }
+
+  /* Mobile nav - Allow responsive.css transforms but prevent conflicts */
+  .nav-mobile {
+    /* Mobile nav initial state - hidden above viewport */
+    transform: translateX(-50%) translateY(-100%) !important;
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+                opacity 0.3s ease,
+                visibility 0.3s ease !important;
+  }
+
+  .nav-mobile.open {
+    /* Mobile nav open state - slide down into view */
+    transform: translateX(-50%) translateY(0) !important;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Reduce translation distances on mobile for hero */
   .hero-name {
     transform: translateX(-50px);
   }
@@ -260,10 +294,6 @@
   }
   
   /* Slightly slower mobile animations - 0.55s-0.7s */
-  .navbar {
-    transition-duration: 0.6s;
-  }
-  
   .hero-name,
   .hero-sub-right-fixed,
   .hero-sub-right2 {
@@ -338,5 +368,11 @@
   
   .navbar {
     transform: translateY(0) !important;
+  }
+  
+  .nav-desktop,
+  .nav-mobile,
+  .nav-mobile.open {
+    transition: none !important;
   }
 }
