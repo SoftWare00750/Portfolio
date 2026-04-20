@@ -7,7 +7,7 @@
   <title>Stephen Otunla</title>
   <link rel="stylesheet" href="css/styles.css">
   <style>
-    /* ── Profile circle ── */
+    /* ── Profile / Rotating Circle ── */
     .profile { position: relative; display: flex; flex-direction: column; align-items: center; }
     .circle-container { position: relative; width: 220px; height: 220px; margin-bottom: 18px; }
     .profile-img { width: 190px; height: 190px; border-radius: 50%; position: absolute; top: 15px; left: 15px; z-index: 1; }
@@ -15,32 +15,56 @@
     @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
     .circle-text span { position: absolute; left: 50%; transform-origin: 0 110px; font-weight: bold; color: #66BFBF; }
 
-    /* ── Mobile overrides ── */
+    /* ── Mobile Responsive ── */
     @media (max-width: 768px) {
 
       /* Typography scale-down */
-      h1 { font-size: 3.5rem; margin: 30px auto 0; }
+      h1 { font-size: 3.2rem; margin: 30px auto 0; }
       h2 { font-size: 1.6rem; }
       h3 { font-size: 1.1rem; }
+      p  { font-size: 0.95rem; line-height: 1.8; }
 
-      /* Top section */
-      .top-container { padding-top: 60px; padding-bottom: 20px; overflow: hidden; }
+      /* Top hero section */
+      .top-container {
+        padding-top: 60px;
+        padding-bottom: 20px;
+        overflow: hidden;
+      }
 
       /* Hide decorative clouds on small screens to avoid overflow */
-      .top-cloud, .bottom-cloud { display: none; }
+      .top-cloud,
+      .bottom-cloud { display: none; }
 
-      /* Mountain fills width naturally */
-      .mountain { width: 100%; height: auto; display: block; }
+      .mountain {
+        width: 100%;
+        max-width: 100%;
+        display: block;
+        margin: 0 auto;
+      }
 
       /* Middle section */
-      .middle-container { margin: 50px 0; }
+      .middle-container { margin: 50px 16px; }
 
-      /* Intro text */
-      .intro { width: 85%; font-size: 0.95rem; }
+      /* Profile circle shrinks a touch */
+      .circle-container { width: 180px; height: 180px; }
+      .profile-img { width: 155px; height: 155px; top: 12px; left: 12px; }
+      .circle-text span { transform-origin: 0 90px; }
 
-      /* Skill rows: stack image above text, full width */
+      /* Intro paragraph */
+      .intro {
+        width: 90%;
+        margin: 16px auto;
+      }
+
+      /* HR dividers */
+      hr {
+        margin: 60px auto;
+        width: 8%;
+      }
+
+      /* Skill rows: stack vertically, full-width */
       .skill-row {
-        width: 88%;
+        width: 90%;
         margin: 50px auto;
         text-align: center;
       }
@@ -50,22 +74,25 @@
       .chilli-img {
         float: none;
         display: block;
-        width: 60%;
+        width: 70%;
+        max-width: 260px;
         height: auto;
         margin: 0 auto 20px;
       }
 
-      /* Divider */
-      hr { margin: 60px auto; }
-
       /* Contact section */
-      .contact-message { width: 85%; font-size: 0.95rem; }
+      .contact-me { padding: 0 16px; }
 
-      /* CTA button: full width, easy tap target */
+      .contact-message {
+        width: 90%;
+        margin: 20px auto 40px;
+      }
+
+      /* CTA button — full-width on mobile */
       .btn {
         display: block;
         width: 80%;
-        max-width: 300px;
+        max-width: 280px;
         margin: 0 auto;
         text-align: center;
         font-size: 1rem;
@@ -73,25 +100,30 @@
         box-sizing: border-box;
       }
 
-      /* Footer links: wrap and add spacing */
-      .bottom-container { padding: 40px 20px 20px; }
-      .bottom-container a {
-        display: inline-block;
-        margin: 8px 12px;
-        font-size: 0.95rem;
+      /* Footer links wrap neatly */
+      .bottom-container {
+        padding: 40px 16px 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px;
       }
 
-      .copyright { font-size: 0.7rem; }
+      .bottom-container a {
+        margin: 6px 12px;
+        font-size: 0.9rem;
+      }
+
+      .copyright { font-size: 0.7rem; width: 100%; text-align: center; }
     }
 
-    /* ── Extra-small phones ── */
+    /* Extra-small phones */
     @media (max-width: 400px) {
-      h1 { font-size: 2.6rem; }
+      h1 { font-size: 2.4rem; }
       h2 { font-size: 1.3rem; }
-      .circle-container { width: 180px; height: 180px; }
-      .profile-img { width: 150px; height: 150px; top: 15px; left: 15px; }
-      .circle-text span { transform-origin: 0 90px; }
-      .code-img, .chilli-img { width: 75%; }
+      .circle-container { width: 150px; height: 150px; }
+      .profile-img { width: 128px; height: 128px; top: 11px; left: 11px; }
+      .circle-text span { transform-origin: 0 75px; }
     }
   </style>
 
@@ -121,7 +153,7 @@
       </div>
       <h2 id="hello-text">Hello.</h2>
     </div>
-    <p class="intro">I am a Mobile and Web Developer.<br>I'm a Junior Developer.<br> I ❤️ gaming and grill my own wings.</p>
+    <p class="intro">I am a Mobile and Web Developer.<br>I'm a Junior Developer.<br>I ❤️ gaming and grill my own wings.</p>
 
     <hr>
 
